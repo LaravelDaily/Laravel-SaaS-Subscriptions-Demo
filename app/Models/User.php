@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use LucasDotVin\Soulbscription\Models\Concerns\HasSubscriptions;
 
 class User extends Authenticatable implements HasLocalePreference
 {
@@ -19,6 +20,7 @@ class User extends Authenticatable implements HasLocalePreference
     use HasAdvancedFilter;
     use Notifiable;
     use SoftDeletes;
+    use HasSubscriptions;
 
     public $table = 'users';
 
