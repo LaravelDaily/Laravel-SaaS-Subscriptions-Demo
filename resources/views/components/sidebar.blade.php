@@ -101,6 +101,13 @@
                 @endif
 
                 <li class="items-center">
+                    <a href="{{ route("admin.plan.index") }}" class="{{ request()->is("admin/plan/*") ? "sidebar-nav-active" : "sidebar-nav" }}">
+                        <i class="fa-fw c-sidebar-nav-icon fas fa-user-circle"></i>
+                        My Plan
+                    </a>
+                </li>
+
+                <li class="items-center">
                     <a href="#" onclick="event.preventDefault(); document.getElementById('logoutform').submit();" class="sidebar-nav">
                         <i class="fa-fw fas fa-sign-out-alt"></i>
                         {{ trans('global.logout') }}
