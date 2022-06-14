@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use \DateTimeInterface;
+use App\Traits\Tenantable;
 use App\Support\HasAdvancedFilter;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,6 +14,7 @@ class Task extends Model
     use HasFactory;
     use HasAdvancedFilter;
     use SoftDeletes;
+    use Tenantable;
 
     public $table = 'tasks';
 
