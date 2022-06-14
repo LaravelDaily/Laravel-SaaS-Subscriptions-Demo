@@ -21,11 +21,5 @@ class FeatureSeeder extends Seeder
             'consumable'       => false,
             'name'             => 'manage-tasks-unlimited',
         ]);
-
-        Feature::create([
-            'consumable'       => true,
-            'name'             => 'manage-tasks-trial',
-            'periodicity_type' => PeriodicityType::Week,
-        ]);
     }
 }

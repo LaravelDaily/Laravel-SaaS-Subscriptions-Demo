@@ -4,7 +4,7 @@
         <label class="form-label required" for="task">{{ trans('cruds.task.fields.task') }}</label>
         <input class="form-control" type="text" name="task" id="task" required wire:model.defer="task.task">
         <div class="validation-message">
-            {{ $errors->first('task.task') }}
+            {!! $errors->first('task.task') !!}
         </div>
         <div class="help-block">
             {{ trans('cruds.task.fields.task_helper') }}

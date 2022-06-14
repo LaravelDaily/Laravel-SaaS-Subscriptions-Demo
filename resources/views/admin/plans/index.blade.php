@@ -42,7 +42,7 @@
 
                     <div>|</div>
 
-                    <form method="POST" action="{{ route('admin.plan.update', 2) }}">
+                    <form method="POST" action="{{ route('admin.plan.update', 3) }}">
                         @csrf
                         @method('PUT')
 
@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="flex space-x-0.5">
-                    <form method="POST" action="{{ route('admin.plan.update', 3) }}">
+                    <form method="POST" action="{{ route('admin.plan.update', 2) }}">
                         @csrf
                         @method('PUT')
 

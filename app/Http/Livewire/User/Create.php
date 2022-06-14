@@ -5,6 +5,7 @@ namespace App\Http\Livewire\User;
 use App\Models\Role;
 use App\Models\User;
 use Livewire\Component;
+use LucasDotVin\Soulbscription\Models\Plan;
 
 class Create extends Component
 {
@@ -33,6 +34,8 @@ class Create extends Component
         $this->user->password = $this->password;
         $this->user->save();
         $this->user->roles()->sync($this->roles);
+
+        $this->user->subscribeTo(Plan::where('name', 'Trial')->first());
 
         return redirect()->route('admin.users.index');
     }

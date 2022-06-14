@@ -101,7 +101,7 @@
                 @endif
 
                 <li class="items-center">
-                    <a href="{{ route("admin.plan.index") }}" class="{{ request()->is("admin/plan/*") ? "sidebar-nav-active" : "sidebar-nav" }}">
+                    <a href="{{ route("admin.plan.index") }}" class="{{ request()->is("admin/plan*") ? "sidebar-nav-active" : "sidebar-nav" }}">
                         <i class="fa-fw c-sidebar-nav-icon fas fa-user-circle"></i>
                         My Plan
                     </a>

@@ -38,12 +38,11 @@ class PlanSeeder extends Seeder
         $trialPlan = Plan::create([
             'name'             => 'Trial',
             'periodicity_type' => PeriodicityType::Week,
-            'periodicity'      => 7,
+            'periodicity'      => 1,
         ]);
 
         $limitedFeature = Feature::where('name', 'manage-tasks-limited')->first();
         $unlimitedFeature = Feature::where('name', 'manage-tasks-unlimited')->first();
-        $trialFeature = Feature::where('name', 'manage-tasks-trial')->first();
 
         $silverMonthly->features()->attach($limitedFeature, ['charges' => 10]);
         $silverYearly->features()->attach($limitedFeature, ['charges' => 10]);
@@ -51,6 +50,6 @@ class PlanSeeder extends Seeder
         $goldMonthly->features()->attach($unlimitedFeature);
         $goldYearly->features()->attach($unlimitedFeature);
 
-        $trialPlan->features()->attach($trialFeature);
+        $trialPlan->features()->attach($limitedFeature, ['charges' => 3]);
     }
 }
