@@ -35,8 +35,6 @@ class Create extends Component
         $this->user->save();
         $this->user->roles()->sync($this->roles);
 
-        $this->user->subscribeTo(Plan::where('name', 'Trial')->first());
-
         return redirect()->route('admin.users.index');
     }
 

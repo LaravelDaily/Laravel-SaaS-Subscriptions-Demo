@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use LucasDotVin\Soulbscription\Models\Plan;
 
 class UsersTableSeeder extends Seeder
 {
@@ -21,5 +22,7 @@ class UsersTableSeeder extends Seeder
         ];
 
         User::insert($users);
+
+        User::find(1)->subscribeTo(Plan::where('name', 'Trial')->first());
     }
 }

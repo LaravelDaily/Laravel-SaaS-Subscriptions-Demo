@@ -6,6 +6,7 @@ use \DateTimeInterface;
 use App\Support\HasAdvancedFilter;
 use Carbon\Carbon;
 use Hash;
+use LucasDotVin\Soulbscription\Models\Plan;
 use Illuminate\Contracts\Translation\HasLocalePreference;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -59,6 +60,13 @@ class User extends Authenticatable implements HasLocalePreference
         'updated_at',
         'deleted_at',
     ];
+
+    protected static function booted()
+    {
+        static::created(function ($user) {
+            $user->subscribeTo(Plan::where('name', 'Trial')->first());
+        });
+    }
 
     public function getIsAdminAttribute()
     {

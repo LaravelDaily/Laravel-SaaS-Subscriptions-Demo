@@ -3,7 +3,7 @@
         <i class="fas fa-bell"></i>
     </span>
     <span class="inline-block align-middle mr-8">
-        {{ $attributes['message'] }}
+        {!! $attributes['message'] !!}
     </span>
     <button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none" onclick="closeAlert(event)">
         <span>×</span>

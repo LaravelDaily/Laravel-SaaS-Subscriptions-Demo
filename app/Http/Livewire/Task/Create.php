@@ -17,7 +17,7 @@ class Create extends Component
     {
         $this->task = $task;
 
-        $this->subscriptionPlan = auth()->user()->subscription?->plan->name;
+        $this->subscriptionPlan = auth()->user()->subscription->plan->name ?? null;
     }
 
     public function render()
@@ -42,7 +42,7 @@ class Create extends Component
                 'Trial'                           => "You can create only 3 tasks on Free Trial, please [<a href='/admin/plan/' class='hover:underline'>choose your plan</a>]",
             };
 
-            throw ValidationException::withMessages(['task.task' => $message]);
+            return redirect()->route('admin.tasks.index')->with('status', $message);
         }
 
         $this->task->save();
