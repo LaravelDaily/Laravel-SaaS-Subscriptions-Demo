@@ -30,7 +30,7 @@
 
             <div class="relative px-4 md:px-10 mx-auto w-full min-h-full -m-48">
                 @if(session('status'))
-                    <x-alert message="{{ session('status') }}" variant="indigo" role="alert" />
+                    <x-alert message="{!! session('status') !!}" variant="indigo" role="alert" />
                 @endif
 
                 @yield('content')
